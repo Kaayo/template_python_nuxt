@@ -164,3 +164,4 @@ async def generate_pdf():
     return StreamingResponse(buffer, media_type="application/pdf", headers={"Content-Disposition": "inline; filename=exemplo.pdf"})
 
 ## uvicorn main:app --reload
+## python -m uvicorn main:app --reload --port 8080
