@@ -10,12 +10,12 @@ async def init_database():
         db_url='postgres://postgres:postgres@localhost:5432/python_api',  # Insira suas credenciais
         modules={'models_db': ['models_db.author', 'models_db.todo']}
     )
+    
+#     # Geração das tabelas
+#     await Tortoise.generate_schemas()
 
 async def exit_database():
     await Tortoise.close_connections()
-
-#     # Geração das tabelas
-#     await Tortoise.generate_schemas()
 
 #     # Criando um autor
 #     author = await Author.create(name="J.K. Rowling")
@@ -30,5 +30,5 @@ async def exit_database():
 #         print(f"Todo: {todo.description}, Completed: {todo.completed}")
 
 # # Rodando a função de inicialização
-# loop = asyncio.get_event_loop()
-# loop.run_until_complete(init())
+#loop = asyncio.get_event_loop()
+#loop.run_until_complete(init_database())

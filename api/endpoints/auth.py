@@ -9,7 +9,10 @@ from reportlab.pdfgen import canvas
 from dto.author_dto import AuthorDTO
 from security.auth import create_access_token, decode_access_token
 
-auth_router = APIRouter()
+auth_router = APIRouter(
+    prefix="/auth",     # Prefixo para todas as rotas aqui
+    tags=["Auth"],      #
+)
 
 # OAuth2PasswordBearer é uma classe que facilita a obtenção do token no cabeçalho da requisição
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")

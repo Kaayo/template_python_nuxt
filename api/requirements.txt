@@ -1,0 +1,9 @@
+pip==24.3.1
+pydantic
+fastapi
+tortoise
+tortoise-orm[asyncpg]
+jwt
+reportlab
+uvicorn
+PyJWT

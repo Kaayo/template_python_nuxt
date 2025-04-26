@@ -11,7 +11,10 @@ from dto.author_dto import AuthorDTO
 from security.auth import create_access_token, decode_access_token
 from models_db.author import Author
 
-author_router = APIRouter()
+author_router = APIRouter(
+    prefix="/author",     # Prefixo para todas as rotas aqui
+    tags=["Author"],     
+)
 
 # Rota consultando todos authores na base de dados
 @author_router.get("/get_all_author")

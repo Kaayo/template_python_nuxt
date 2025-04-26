@@ -13,7 +13,10 @@ from reportlab.lib import colors
 from reportlab.lib.pagesizes import letter
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Image
 
-pdf_router = APIRouter()
+pdf_router = APIRouter(
+    prefix="/pdf",     # Prefixo para todas as rotas aqui
+    tags=["PDF"],     
+)
 
 @pdf_router.get("/generate-pdf")
 async def gerar_pdf():
